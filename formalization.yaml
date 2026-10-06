@@ -54,11 +54,10 @@ fidelity:
     the formal statement.
 
 sources:
-  - title: "beta_1 <= 2W for four-generated numerical semigroups (claim_0003)"
+  - title: "Linear upper bounds for the first Betti number of four-generated numerical semigroups (result first presented by this formalization)"
     authors: ["Ben Keene"]
-    type: "manuscript"
-    id: "aiseminar repository, agents/shared/claim_0003 (PROOF_B_combinatorial.md, PROOF_B_lean_writeup.md)"
-    relationship: formalizes
+    type: "original-proof"
+    relationship: other
     note: >-
       Unpublished manuscript.  The informal proofs were produced with AI assistance (see
       automation.methods).  The combinatorial proof (support counting on factorization graphs)
