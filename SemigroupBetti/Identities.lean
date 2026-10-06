@@ -3,7 +3,9 @@ Copyright (c) 2026 Ben Keene. All rights reserved.
 Released under Apache 2.0 license as described in the file LICENSE.
 Authors: Ben Keene
 -/
-import SemigroupBetti.Partition
+module
+
+public import SemigroupBetti.Partition
 
 /-!
 # Arithmetic parameters, the three vector identities, and interior bounds
@@ -11,6 +13,8 @@ import SemigroupBetti.Partition
 Write-up `PROOF_B_lean_writeup.md`: Definition 8, Lemma 8, Lemma 9.
 The write-up's lowercase `d = gcd(s,t)` is called `dg` here (to avoid a clash with degrees).
 -/
+
+@[expose] public section
 
 namespace SemigroupBetti
 

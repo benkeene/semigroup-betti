@@ -3,7 +3,9 @@ Copyright (c) 2026 Ben Keene. All rights reserved.
 Released under Apache 2.0 license as described in the file LICENSE.
 Authors: Ben Keene
 -/
-import SemigroupBetti.Fiber
+module
+
+public import SemigroupBetti.Fiber
 
 /-!
 # Critical exponents and singleton-support components
@@ -11,6 +13,8 @@ import SemigroupBetti.Fiber
 Write-up `PROOF_B_lean_writeup.md`: Definition 5, Lemma 3, Definition 6, Lemma 4.
 Here `k • eᵢ` is written `Pi.single i k`.
 -/
+
+@[expose] public section
 
 namespace SemigroupBetti
 

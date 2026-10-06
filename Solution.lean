@@ -3,10 +3,35 @@ Copyright (c) 2026 Ben Keene. All rights reserved.
 Released under Apache 2.0 license as described in the file LICENSE.
 Authors: Ben Keene
 -/
+module
+
+public import Mathlib
 import SemigroupBetti
 
 /-!
-# Solutions to the Challenge
+# Linear upper bounds for the first Betti number of four-generated numerical semigroups
+
+Let `n 0 < n 1 < n 2 < n 3` be positive integers with greatest common divisor `1` which
+*minimally* generate the numerical semigroup `S = ⟨n 0, n 1, n 2, n 3⟩` (no generator is a
+sum of copies of the others).  The toric ideal `I` of `S` over a field `K` is the kernel of
+`K[X₀, X₁, X₂, X₃] → K[t]`, `Xᵢ ↦ t ^ (n i)`; its minimal number of generators `μ(I)` is the
+first Betti number `β₁` of `K[S]`.  Write `w = n 3 - n 0` for the width of `S` and
+`g = gcd (n 1 - n 0, n 2 - n 0, n 3 - n 0)`.
+
+* `SemigroupBetti.beta1_le_two_mul_normalizedWidth`: `μ(I) ≤ 2 * (w / g)`.
+* `SemigroupBetti.beta1_le_two_mul_width`: `μ(I) ≤ 2 * w` (the form stated in the paper).
+
+Here β₁ = μ_P(I_S), equivalently the cardinality of a minimal presentation of S, over every
+field. These declarations formalize the upper bounds only; sharpness (the bound 2w is attained
+for every w ≥ 4) and equality between spanRank and the combinatorial invariant are not
+formalized. Proofs are supplied in `Solution.lean`.
+
+The conjectured bound in the literature (Herzog–Stamate 2014; Caviglia–Moscariello–Sammartano
+2024) was `w.choose 2 + w`, i.e. `(w+1).choose 2`. Informal companion result (not formalized
+here): the bound `2w` is sharp for every `w ≥ 4`.
+Both theorems are stated with `Submodule.spanRank` (a cardinal), so no truncation is involved.
+
+## Proofs (this module)
 
 The declarations of `Challenge.lean`, restated verbatim (definitions `toricIdeal`,
 `MinimallyGenerates`, `normalizedWidth` and the two theorem statements) and proved.  As in the
@@ -19,6 +44,8 @@ Each theorem is a thin bridge:
   `μ(I) ≤ β₁`, where `β₁` is the combinatorial first Betti number;
 * `GenData.beta1_le_two_W` / `GenData.beta1_le_two_w` (`SemigroupBetti/Main.lean`) bound `β₁`.
 -/
+
+@[expose] public section
 
 namespace SemigroupBetti
 

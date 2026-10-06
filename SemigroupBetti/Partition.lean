@@ -3,7 +3,9 @@ Copyright (c) 2026 Ben Keene. All rights reserved.
 Released under Apache 2.0 license as described in the file LICENSE.
 Authors: Ben Keene
 -/
-import SemigroupBetti.Critical
+module
+
+public import SemigroupBetti.Critical
 
 /-!
 # Pair partitions, the exact decomposition of `β₁`, and the antichain property
@@ -14,6 +16,8 @@ A degree `d` *splits along* `K ⊆ Fin 4` (`IsSplit d K`) when `∇_d` has two d
 with supports `K` and `Kᶜ`. The partitions `01|23`, `02|13`, `03|12` are `IsSplit d {0,1}`,
 `IsSplit d {0,2}`, `IsSplit d {0,3}`.
 -/
+
+@[expose] public section
 
 namespace SemigroupBetti
 

@@ -3,13 +3,17 @@ Copyright (c) 2026 Ben Keene. All rights reserved.
 Released under Apache 2.0 license as described in the file LICENSE.
 Authors: Ben Keene
 -/
-import SemigroupBetti.Arith
+module
+
+public import SemigroupBetti.Arith
 
 /-!
 # The exceptional case `(A, B) = (1, W - 1)`
 
 Write-up `PROOF_B_lean_writeup.md`: Lemma 14, Lemma 15, Lemma 16.
 -/
+
+@[expose] public section
 
 namespace SemigroupBetti
 

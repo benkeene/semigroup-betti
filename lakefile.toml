@@ -13,7 +13,7 @@ maxSynthPendingDepth = 3
 [[require]]
 name = "mathlib"
 scope = "leanprover-community"
-rev = "5ed2965256"
+rev = "v4.35.0-rc4"
 
 [[lean_lib]]
 name = "SemigroupBetti"

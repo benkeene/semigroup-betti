@@ -3,13 +3,17 @@ Copyright (c) 2026 Ben Keene. All rights reserved.
 Released under Apache 2.0 license as described in the file LICENSE.
 Authors: Ben Keene
 -/
-import SemigroupBetti.Antichain
+module
+
+public import SemigroupBetti.Antichain
 
 /-!
 # The general arithmetic bound and the non-exceptional cases
 
 Write-up `PROOF_B_lean_writeup.md`: Lemma 13.
 -/
+
+@[expose] public section
 
 namespace SemigroupBetti
 

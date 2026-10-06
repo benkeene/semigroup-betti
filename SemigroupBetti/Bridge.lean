@@ -3,7 +3,9 @@ Copyright (c) 2026 Ben Keene. All rights reserved.
 Released under Apache 2.0 license as described in the file LICENSE.
 Authors: Ben Keene
 -/
-import SemigroupBetti.Fiber
+module
+
+public import SemigroupBetti.Fiber
 
 /-!
 # The algebraic bridge: `μ(I) ≤ β₁`
@@ -26,6 +28,8 @@ and take the binomials `X^{rep C} - X^{rep C₀}`, `C ≠ C₀`.  There are at m
 Main results: `GenData.toricKer_eq_span`, `GenData.spanRank_toricKer_le_beta1`.
 Also `GenData.ofChallenge`: the conversion from the hypotheses of `Challenge.lean`.
 -/
+
+@[expose] public section
 
 namespace SemigroupBetti
 

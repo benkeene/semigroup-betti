@@ -6,10 +6,12 @@ Authors: Ben Keene
 Statement of record for the Palomar submission: the first Betti number of a
 four-generated numerical semigroup ring is at most twice its width.
 -/
-import Mathlib
+module
+
+public import Mathlib
 
 /-!
-# A sharp linear bound for the first Betti number of four-generated numerical semigroups
+# Linear upper bounds for the first Betti number of four-generated numerical semigroups
 
 Let `n 0 < n 1 < n 2 < n 3` be positive integers with greatest common divisor `1` which
 *minimally* generate the numerical semigroup `S = ⟨n 0, n 1, n 2, n 3⟩` (no generator is a
@@ -21,10 +23,18 @@ first Betti number `β₁` of `K[S]`.  Write `w = n 3 - n 0` for the width of `S
 * `SemigroupBetti.beta1_le_two_mul_normalizedWidth`: `μ(I) ≤ 2 * (w / g)`.
 * `SemigroupBetti.beta1_le_two_mul_width`: `μ(I) ≤ 2 * w` (the form stated in the paper).
 
+Here β₁ = μ_P(I_S), equivalently the cardinality of a minimal presentation of S, over every
+field. These declarations formalize the upper bounds only; sharpness (the bound 2w is attained
+for every w ≥ 4) and equality between spanRank and the combinatorial invariant are not
+formalized. Proofs are supplied in `Solution.lean`.
+
 The conjectured bound in the literature (Herzog–Stamate 2014; Caviglia–Moscariello–Sammartano
-2024) was `w.choose 2 + w`, i.e. `(w+1).choose 2`; the bound `2w` is sharp for every `w ≥ 4`.
+2024) was `w.choose 2 + w`, i.e. `(w+1).choose 2`. Informal companion result (not formalized
+here): the bound `2w` is sharp for every `w ≥ 4`.
 Both theorems are stated with `Submodule.spanRank` (a cardinal), so no truncation is involved.
 -/
+
+@[expose] public section
 
 namespace SemigroupBetti
 

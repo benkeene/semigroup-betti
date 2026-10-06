@@ -3,13 +3,17 @@ Copyright (c) 2026 Ben Keene. All rights reserved.
 Released under Apache 2.0 license as described in the file LICENSE.
 Authors: Ben Keene
 -/
-import SemigroupBetti.Defs
+module
+
+public import SemigroupBetti.Defs
 
 /-!
 # Fibers, factorization graphs, combinatorial `β₁`, the finite cutoff, and Lemma 2
 
 Write-up `PROOF_B_lean_writeup.md`: Definition 3, Lemma 0 part A, Lemma 2.
 -/
+
+@[expose] public section
 
 namespace SemigroupBetti
 

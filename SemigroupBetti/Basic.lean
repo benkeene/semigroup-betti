@@ -1,6 +1,15 @@
-import Mathlib
+/-
+Copyright (c) 2026 Ben Keene. All rights reserved.
+Released under Apache 2.0 license as described in the file LICENSE.
+Authors: Ben Keene
+-/
+module
+
+public import Mathlib
 
 /-! # Development library for the combinatorial proof of `β₁ ≤ 2W` (skeleton). -/
+
+@[expose] public section
 
 namespace SemigroupBetti
 

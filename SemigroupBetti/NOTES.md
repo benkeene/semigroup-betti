@@ -4,8 +4,8 @@ Source: `agents/shared/claim_0003/PROOF_B_lean_writeup.md`. Everything lives in 
 `SemigroupBetti.GenData` with `(G : GenData)` explicit. Sorry count: **0**. Axioms of the main
 lemmas: `propext, Classical.choice, Quot.sound` only.
 
-Build: `./build_direct.sh` (lake-free). Iteration helpers: `./check.sh <file>` (type-check one
-file), `./mk.sh <file>` (compile one module to its olean so downstream files can import it).
+Build: `lake build` (the lake-free helper scripts `build_direct.sh`/`check.sh`/`mk.sh` used during
+development were removed on 2026-10-06 when the project moved to Lean v4.35.0-rc4 and the module system).
 
 ## Defs.lean — Definitions 1–2, Lemma 1
 - `gens m a b w = ![m, m+a, m+b, m+w]`; `structure GenData` (fields `m a b w`, `m_pos`, `a_pos`,

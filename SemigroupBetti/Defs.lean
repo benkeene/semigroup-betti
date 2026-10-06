@@ -3,13 +3,17 @@ Copyright (c) 2026 Ben Keene. All rights reserved.
 Released under Apache 2.0 license as described in the file LICENSE.
 Authors: Ben Keene
 -/
-import Mathlib
+module
+
+public import Mathlib
 
 /-!
 # Generator data, vectors in `ℕ⁴`, and normalized arithmetic
 
 Write-up `PROOF_B_lean_writeup.md`, §1: Definitions 1–2 and Lemma 1.
 -/
+
+@[expose] public section
 
 namespace SemigroupBetti
 

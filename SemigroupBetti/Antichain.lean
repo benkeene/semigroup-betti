@@ -3,13 +3,17 @@ Copyright (c) 2026 Ben Keene. All rights reserved.
 Released under Apache 2.0 license as described in the file LICENSE.
 Authors: Ben Keene
 -/
-import SemigroupBetti.Identities
+module
+
+public import SemigroupBetti.Identities
 
 /-!
 # Antichain counting
 
 Write-up `PROOF_B_lean_writeup.md`: Lemma 10, Lemma 11, Lemma 12.
 -/
+
+@[expose] public section
 
 namespace SemigroupBetti
 
