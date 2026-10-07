@@ -52,8 +52,23 @@ The template's Comparator job (which installs bubblewrap and relaxes the runner'
 before running `scripts/verify-comparator.sh`) is **not yet** in the workflow; until it is added, Comparator has to be
 run on a Linux machine with `bwrap`.
 
+## Palomar entry and citation
+This formalization is hosted on Palomar as
+[PALOMAR-2026-10-07-000005 v1](https://palomar-registry.org/entry?id=PALOMAR-2026-10-07-000005&version=1).
+To cite it:
+```bibtex
+@misc{palomar-2026-10-07-000005-v1,
+  author = {{Ben Keene}},
+  title = {{Linear upper bounds for the first Betti number of four-generated numerical semigroups}},
+  year = {2026},
+  howpublished = {Palomar, PALOMAR-2026-10-07-000005 v1},
+  url = {https://palomar-registry.org/entry?id=PALOMAR-2026-10-07-000005&version=1},
+}
+```
+
 ## Submission
-Palomar submissions go through https://submit.palomar-registry.org/ with the full 40-character commit SHA.
+Palomar submissions (including new versions of this entry) go through https://submit.palomar-registry.org/ with the
+full 40-character commit SHA.
 
 ## History
 Earlier pins were Lean v4.34.0-rc1 / Mathlib `de5ce8a9a6` (dropped because that toolchain's `lake` crashed with SIGTRAP
