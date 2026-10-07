@@ -8,7 +8,16 @@ four-generated numerical semigroup ring is at most twice its width.
 -/
 module
 
-public import Mathlib
+public import Mathlib.Algebra.MvPolynomial.Basic
+public import Mathlib.Algebra.MvPolynomial.Eval
+public import Mathlib.Algebra.Polynomial.Basic
+public import Mathlib.Algebra.Polynomial.AlgebraMap
+public import Mathlib.Algebra.Module.SpanRank
+public import Mathlib.Algebra.BigOperators.Group.Finset.Basic
+public import Mathlib.Algebra.GCDMonoid.Finset
+public import Mathlib.Data.Nat.GCD.Basic
+public import Mathlib.Order.Monotone.Basic
+public import Mathlib.Algebra.Group.Submonoid.Basic
 
 /-!
 # Linear upper bounds for the first Betti number of four-generated numerical semigroups

@@ -2,7 +2,7 @@
 # Changes: the template-only sentinel/validator-test steps and the doc-gen4 job are dropped;
 # licensee is installed directly (no Gemfile); the build job has a long timeout in case the
 # Mathlib cache for the pinned tag is incomplete and Mathlib has to be compiled on the runner.
-# The template's `comparator` job (bubblewrap + scripts/verify-comparator.sh) is not yet
+# The template's `comparator` job (bubblewrap + scripts/verify-comparator.sh) is included below
 # included here; see README.md.
 name: CI
 
@@ -84,3 +84,27 @@ jobs:
       - uses: leanprover/lean-action@38fbc41a8c28c4cbaec22d7f7de508ec2e7c0dd9
         with:
           build: true
+
+  comparator:
+    name: Check statement against solution
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          persist-credentials: false
+      - name: Check Lean source requirements before builds
+        run: python3 scripts/check-lean-sources.py
+      - uses: leanprover/lean-action@38fbc41a8c28c4cbaec22d7f7de508ec2e7c0dd9
+        with:
+          build: false
+      - name: Install bubblewrap for lake comparator's sandbox
+        # Ubuntu 24.04 restricts unprivileged user namespaces through AppArmor,
+        # which `bwrap` needs for the sandbox; the runner is disposable.
+        run: |
+          sudo apt-get update -qq >/dev/null
+          sudo apt-get install -y -qq bubblewrap >/dev/null
+          sudo sysctl -w kernel.apparmor_restrict_unprivileged_userns=0
+      - name: Run the toolchain's lake comparator
+        run: ./scripts/verify-comparator.sh
+
