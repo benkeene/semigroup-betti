@@ -35,8 +35,8 @@ status:
     beta1.  Not formalized: sharpness of the bound and the reverse inequality beta1 <= spanRank.
     The only two sorrys in the repository are the deliberate holes in Challenge.lean (Comparator
     convention); both Solution theorems depend on exactly propext, Classical.choice and
-    Quot.sound.  Built with `lake build` on Lean v4.35.0-rc4 / Mathlib v4.35.0-rc4
-    (1f414401f6), all files in the module system (9036 jobs).
+    Quot.sound.  Built with `lake build` on Lean v4.35.0-rc3 / Mathlib v4.35.0-rc3
+    (c55e6e786f), all files in the module system (9036 jobs).
   sorry_count: 2
   sorry_in_definitions: 0
   axioms: ["propext", "Classical.choice", "Quot.sound"]

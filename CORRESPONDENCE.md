@@ -39,8 +39,8 @@ Formalized: (i) in full (`SemigroupBetti.GenData.beta1_le_two_W`), and the half 
 `spanRank (I_S) ≤ β₁ᶜ` (`SemigroupBetti.GenData.spanRank_le_beta1_of_n_eq`, via an explicit generating set of binomials
 indexed by graph components). Not formalized: the reverse inequality β₁ᶜ ≤ μ(I_S) (equality), and sharpness of the bound.
 
-**Build record (2026-10-06).** Toolchain `leanprover/lean4:v4.35.0-rc4`, Mathlib tag `v4.35.0-rc4`
-(commit `1f414401f69059aa7eead47b53ee40bd38455eeb`); every `.lean` file uses the module system (`module`, `public import`,
+**Build record (2026-10-06).** Toolchain `leanprover/lean4:v4.35.0-rc3`, Mathlib tag `v4.35.0-rc3`
+(commit `c55e6e786f`); every `.lean` file uses the module system (`module`, `public import`,
 `@[expose] public section`). The move from v4.34.0 / `5ed2965256` required no proof changes. `lake build`:
 `Build completed successfully (9036 jobs)`; the only `sorry` warnings are Challenge.lean:59 and :66 (the deliberate holes;
 `sorry` tokens on lines 63 and 70). `rg -n '\b(sorry|admit|axiom)\b|native_decide|unsafe' --glob '*.lean' --glob '!.lake/**' .`:
@@ -53,3 +53,10 @@ exactly those two Challenge lines. Axiom check run on the **`Solution`** declara
 
 *History.* Earlier pins: v4.34.0-rc1 / `de5ce8a9a6` (dropped because that toolchain's `lake` crashed with SIGTRAP on macOS
 27.0.1), then v4.34.0 / `5ed2965256` (8940 jobs, one API change `MvPolynomial.coeff s f` → `f.coeff s`, one deprecation fix).
+
+**Pin note (2026-10-07).** Moved from Lean v4.35.0-rc4 / Mathlib tag v4.35.0-rc4 to Lean v4.35.0-rc3 / Mathlib tag
+v4.35.0-rc3 (c55e6e786f) because Palomar's Challenge renderer (Verso's `literate` facet at the rc4 tag) fails on every
+module-system file: its `--setup` artifact map omits the private-level `.olean.private` of imports, so `importModules`
+reports "missing data file for module …" (reproduced locally; the rc3 tag loads imports through the search path and
+renders both the Palomar template's toy Challenge and this Challenge). No Lean source changed between the two pins;
+`lake build` (8975 jobs), the sorry audit and `#print axioms` were re-run on rc3 with identical results.
